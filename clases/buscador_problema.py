@@ -42,11 +42,11 @@ class BuscadorProblema:
             razon = getattr(module, self.tipos[transaccion['tipo']]['clase'])()
             explicacion = razon.resolver(self.cliente, transaccion)
 
-            return{
-                "razon": explicacion,
-                "Estado": transaccion['estado'],
-                "tipo": transaccion['tipo'],
-                "saldo": transaccion['saldoEnCuenta'],
-                "fecha":transaccion['fecha'],
-                "monto": transaccion['monto']
-            }
+        return{
+            "razon": explicacion,
+            "estado": transaccion['estado'],
+            "tipo": transaccion['tipo'],
+            "saldo": transaccion['saldoEnCuenta'],
+            "fecha":transaccion['fecha'],
+            "monto": transaccion['monto']
+        }
