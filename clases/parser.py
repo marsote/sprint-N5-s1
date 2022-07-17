@@ -1,6 +1,6 @@
 import json
 from typing import Tuple
-from .clase_cliente import Cliente, ClienteClassic, ClienteGold, ClienteBlack, BuilderCliente
+from .clase_cliente import *
 
 
 class Parser:
@@ -19,14 +19,15 @@ class Parser:
     def parserClientes(self, eventos) -> Cliente:
         tipo = eventos["tipo"]
 
-        if tipo == 'CLASSIC':
+        if tipo == CLASSIC:
             cliente = ClienteClassic(
                 **BuilderCliente.getDatosClientesClassic())
 
-        elif tipo == 'GOLD':
+        elif tipo == GOLD:
             cliente = ClienteGold(**BuilderCliente.getDatosClientesClassic())
 
-        elif tipo == 'BLACK':
+        elif tipo == BLACK:
             cliente = ClienteBlack(**BuilderCliente.getDatosClientesClassic())
 
+        cliente.inicializar(eventos)
         return cliente

@@ -1,5 +1,5 @@
-from ..clase_cuenta.cuenta import Cuenta
-from ..clase_direccion import Direccion
+from .cuenta import Cuenta
+from .direccion import Direccion
 
 
 CLASSIC = "CLASSIC"

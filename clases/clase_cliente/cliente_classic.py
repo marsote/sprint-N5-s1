@@ -6,5 +6,9 @@ class ClienteClassic(Cliente):
 
     def puede_crear_chequera(self):
         return False
+    def puede_crear_tarjeta_credito(self):
+        return False
+    def puede_comprar_dolar(self):
+        return False
 
     
